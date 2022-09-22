@@ -35,7 +35,7 @@ class DeliveryTest {
 
         $("span[data-test-id='city'] input").setValue(city.substring(0, 2));
         $$("div.menu div.menu-item").find(exactText(city)).click();
-        // $x("//*[@data-test-id = \"date\"]//self::input").doubleClick().sendKeys(Keys.DELETE + planningDate1);
+
         $("span[data-test-id='date'] input.input__control").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("span[data-test-id='date'] input.input__control").setValue(firstMeetingDate);
 
@@ -45,7 +45,7 @@ class DeliveryTest {
         $("label[data-test-id='agreement']").click();
         $$("button").find(exactText("Запланировать")).click();
         $("div[data-test-id='success-notification'] button").waitUntil(visible, 12000).click();
-        //  $x("//*[@data-test-id = \"date\"]//self::input").doubleClick().sendKeys(Keys.DELETE + planningDate2);
+
         $("span[data-test-id='date'] input.input__control").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("span[data-test-id='date'] input.input__control").setValue(secondMeetingDate);
 
